@@ -28,7 +28,6 @@ app.use('/position', PositionRoute);
 //   res.sendFile(path.join(__dirname+'/index.html'));
 //   //__dirname : It will resolve to your project folder.
 // });
-console.log(typeof db)
 app.get('', function(req, res){
 	model.find().exec(function(err, leads){
 	res.send(leads);
