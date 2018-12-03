@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server"
+    "start": "nodemon server.js"
   },
-  "author": "",
+  "author": "Kevin Tang",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",

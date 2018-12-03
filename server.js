@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const url = 'https://rockblock.herokuapp.com/'
 
 const config = require('./db');
 const PositionRoute = require('./PositionRoute');
@@ -34,6 +35,6 @@ app.get('', function(req, res){
 	res.send(leads);
 	})});
 
-app.listen(PORT, () => {
+app.listen(url, () => {
   console.log('Server is running on PORT:',PORT);
 });
