@@ -13,16 +13,11 @@ var uristring =
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static(__dirname));
+
 const config = require('./db');
 const PositionRoute = require('./PositionRoute');
 const Position = require('./Position');
-
-app.use(express.static(__dirname));
-
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname,'index.html'));
-});
-
 
 
 mongoose.connect(uristring, { useNewUrlParser: true }).then(
