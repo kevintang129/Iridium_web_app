@@ -17,12 +17,13 @@ const config = require('./db');
 const PositionRoute = require('./PositionRoute');
 const Position = require('./Position');
 
+app.use(express.static(__dirname));
+
 app.get('*', (request, response) => {
 	response.sendFile(path.join(__dirname,'index.html'));
 });
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static());
-}
+
+
 
 mongoose.connect(uristring, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
