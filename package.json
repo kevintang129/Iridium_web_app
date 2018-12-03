@@ -15,6 +15,7 @@
     "express": "^4.16.4",
     "mongoose": "^5.3.14",
     "nodemon": "^1.18.7",
+    "path": "^0.12.7",
     "querystring": "^0.2.0",
     "request": "^2.88.0"
   }
