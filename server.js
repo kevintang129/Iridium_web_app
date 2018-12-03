@@ -17,6 +17,13 @@ const config = require('./db');
 const PositionRoute = require('./PositionRoute');
 const Position = require('./Position');
 
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname,'index.html'));
+});
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static());
+}
+
 mongoose.connect(uristring, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
   err => { console.log('Can not connect to the database'+ err)}
