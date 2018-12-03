@@ -4,7 +4,10 @@ const bodyParser = require('body-parser');
 const JSON = require('circular-json');
 var path = require("path");
 const Schema = mongoose.Schema;
-
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/HelloMongoose';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,7 +16,7 @@ const config = require('./db');
 const PositionRoute = require('./PositionRoute');
 const Position = require('./Position');
 
-mongoose.connect(config.DB, { useNewUrlParser: true }).then(
+mongoose.connect(uristring, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
   err => { console.log('Can not connect to the database'+ err)}
 );
