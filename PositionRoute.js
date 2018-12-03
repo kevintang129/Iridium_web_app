@@ -1,5 +1,4 @@
 const express = require('express');
-var qs = require('querystring');
 
 const PositionRouter = express.Router();
 
