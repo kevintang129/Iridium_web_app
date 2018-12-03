@@ -1,13 +1,12 @@
+var http = require ('http');         // For serving a basic web page.
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const JSON = require('circular-json');
 var path = require("path");
 const Schema = mongoose.Schema;
-var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/HelloMongoose';
+console.log(process.env.MONGOLAB_URI)
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/HelloMongoose';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
